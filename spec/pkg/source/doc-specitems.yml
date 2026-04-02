@@ -1,0 +1,24 @@
+SPDX-License-Identifier: CC-BY-SA-4.0 OR BSD-2-Clause
+copyrights:
+- Copyright (C) 2026 embedded brains GmbH & Co. KG
+copyrights-by-license: {}
+destination-directory: ${.:/component/deployment-directory}/src/doc-specitems
+enabled-by: true
+file-mappings:
+- pattern: ^common/
+  replacement: ''
+- pattern: ^specitems/
+  replacement: source/
+files: []
+links:
+- hash: null
+  name: component
+  role: input
+  uid: ../component
+patterns:
+- common/**/*
+- specitems/*.rst
+pkg-type: workspace
+directory: ${.:/component/workspace-directory}/${.:/component/specthingsdoc-directory}
+type: pkg
+workspace-type: directory

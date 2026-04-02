@@ -1,0 +1,109 @@
+% SPDX-License-Identifier: CC-BY-SA-4.0
+%
+% Copyright (C) 2019 embedded brains GmbH & Co. KG
+
+\usepackage{charter}
+\usepackage{pdflscape}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,fit}
+\usepackage[defaultsans]{lato}
+\usepackage{inconsolata}
+\usepackage{upgreek}
+\usepackage[atend]{bookmark}
+\bookmarksetup{open,openlevel=1,numbered,}
+\setcounter{secnumdepth}{5}
+
+% Example ".. tabularcolumns:: |\Yl{0.1}|\Yr{0.9}|"
+\newcolumntype{\Yl}[1]{>{\raggedright\arraybackslash}\Y{#1}}
+\newcolumntype{\Yr}[1]{>{\raggedleft\arraybackslash}\Y{#1}}
+\newcolumntype{\Yj}[1]{>{\centering\arraybackslash}\Y{#1}}
+
+% Fix number and title overlap in table of contents
+\renewcommand{\numberline}[1]{#1~}
+
+% Using \sphinxDUC instead of \DeclareUnicodeCharacter to work in either utf8 or utf8x
+\sphinxDUC{200B}{{\hskip 0pt}}
+\sphinxDUC{03BC}{$\upmu$}
+\sphinxDUC{FFFD}{$\blacksquare$}
+
+\protected\def\sphinxstyletheadfamily{\py@HeaderFamily \py@TitleColor}
+
+\renewcommand{\sphinxmaketitle}{
+  \begin{titlepage}
+    % For PDF information dictionary
+    \begingroup
+     \def\endgraf{ }\def\and{\& }
+     \pdfstringdefDisableCommands{\def\\{, }}
+     \hypersetup{pdfauthor={\@author}, pdftitle={\@title}}
+    \endgroup
+
+    \py@HeaderFamily
+
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[yshift=-3cm,xshift=8cm] at (current page.north west) {
+        \includegraphics[width=0.5\paperwidth]{logo-eb.pdf}
+      };
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[remember picture,overlay]
+    \begin{pgfonlayer}{background}
+      \node[yshift=10cm] at (current page.south) {\includegraphics[width=\paperwidth,height=20cm]{blue-dots.pdf}};
+    \end{pgfonlayer}
+    \end{tikzpicture}
+
+    \vspace{2.5cm}
+
+    \begin{flushright}
+    % Space for upper right title
+    \end{flushright}
+
+    \vspace{6.0cm}
+
+    \begin{flushleft}
+    {\fontsize{40}{50}\selectfont \pkgtitlepagetitle}
+
+    {\Huge \py@release}
+    \end{flushleft}
+  \end{titlepage}
+}
+\addtolength{\headheight}{\baselineskip}
+\fancypagestyle{normal}{
+  \fancyhf{}
+  \fancyhead[L]{
+    \includegraphics[height=0.5cm]{logo-eb.pdf}
+    \hfill
+    {\py@HeaderFamily \small \@title} \\
+    {\py@HeaderFamily \vspace{-4pt} \tiny \py@release \hfill} {\py@HeaderFamily \pkgheaderleft}
+  }
+  \fancyfoot[L]{
+    {\py@HeaderFamily \small \pkgcopyright} \\
+    {\py@HeaderFamily \pkgfooterright}
+  }
+  \fancyfoot[R]{\py@HeaderFamily \small \thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{
+    \includegraphics[height=0.5cm]{logo-eb.pdf}
+    \hfill
+    {\py@HeaderFamily \small \@title} \\
+    {\py@HeaderFamily \vspace{-4pt} \tiny \py@release \hfill} {\py@HeaderFamily \pkgheaderleft}
+  }
+  \fancyfoot[L]{
+    {\py@HeaderFamily \small \pkgcopyright} \\
+    {\py@HeaderFamily \pkgfooterright}
+  }
+  \fancyfoot[R]{\py@HeaderFamily \small \thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% See sphinxmanual.cls
+\renewenvironment{sphinxthebibliography}[1]{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \begin{thebibliography}{#1}%
+  \label{\detokenize{eb:bibliography}}
+  \addcontentsline{toc}{chapter}{\bibname}}{\end{thebibliography}}

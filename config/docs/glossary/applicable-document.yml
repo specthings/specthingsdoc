@@ -1,0 +1,14 @@
+SPDX-License-Identifier: CC-BY-SA-4.0
+copyrights:
+- Copyright (C) 2019 embedded brains GmbH & Co. KG
+enabled-by: true
+glossary-type: term
+links:
+- role: glossary-member
+  uid: group
+term: applicable document
+text: |
+  This term is defined by the ${ecss:/term} standard ECSS-S-ST-00-01C as a
+  "document that contains provisions which, through reference in the source
+  document, constitute additional provisions of the source document".
+type: glossary

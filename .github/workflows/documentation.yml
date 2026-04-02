@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+# Copyright (C) 2026 embedded brains GmbH & Co. KG
+
+name: Documentation
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - name: Set up Python
+      uses: actions/setup-python@v6
+    - name: Set up uv
+      uses: astral-sh/setup-uv@v7
+      with:
+        enable-cache: true
+        version: 0.10.12
+    - name: Install Dependencies
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages: latexmk pdftk texlive texlive-fonts-extra texlive-latex-extra
+        version: 1.0
+        execute_install_scripts: true
+    - name: Make
+      run: make GIT_OPTIONS=--do-not-use-git
+    - uses: actions/upload-artifact@v4
+      with:
+        name: Documents
+        path: build/doc/**/*.pdf
+        overwrite: true

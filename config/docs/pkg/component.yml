@@ -1,0 +1,35 @@
+SPDX-License-Identifier: CC-BY-SA-4.0 OR BSD-2-Clause
+build-directory: ${.:/deployment-directory}/build
+copyrights:
+- Copyright (C) 2026 embedded brains GmbH & Co. KG
+component-type: generic
+documentation-directory: ${.:/deployment-directory}/doc
+document-date: '2026-03-09'
+document-html-footer: |
+  <p>
+  This document is under the CC-BY-SA-4.0 license.
+  </p>
+document-latex-footer-right: |
+  \tiny
+  This document is under the CC-BY-SA-4.0 license.
+document-latex-geometry: includeheadfoot, headheight=10mm, headsep=5mm, footskip=5mm
+document-latex-header-left: ''
+document-latex-sphinxsetup: hmargin={20mm, 20mm}, vmargin={10mm, 24mm}
+document-latex-style: project
+document-package-title: specthings
+document-variant: ''
+deployment-directory: build
+eb-docs-software-directory: src
+enabled-by: true
+enabled-set: []
+enabled-set-actions: []
+enabled-set-feedback-mapping: {}
+links:
+- role: glossary
+  uid: /glossary/group
+name: docs
+pkg-type: workspace
+package-version: '1'
+specthingsdoc-directory: src
+type: pkg
+workspace-type: component

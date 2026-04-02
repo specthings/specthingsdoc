@@ -1,0 +1,85 @@
+SPDX-License-Identifier: CC-BY-SA-4.0 OR BSD-2-Clause
+copyrights:
+- Copyright (C) 2026 embedded brains GmbH & Co. KG
+copyrights-by-license: {}
+directory: ${.:/component/documentation-directory}/specitems
+directory-state-type: sphinx
+document-copyrights:
+- Copyright (C) 2026 embedded brains GmbH & Co. KG
+document-title: specitems\breakSoftware\breakUser Manual\break[${.:/component/document-variant}]
+document-toctree-maxdepth: 4
+document-html-help-base-name: specitems
+document-html-footer: ${.:/component/document-html-footer}
+document-key: specitems
+document-latex-footer-right: ${.:/component/document-latex-footer-right}
+document-latex-geometry: ${.:/component/document-latex-geometry}
+document-latex-header-left: ${.:/component/document-latex-header-left}
+document-latex-sphinxsetup: ${.:/component/document-latex-sphinxsetup}
+document-latex-theme: manual
+document-license: CC-BY-SA-4.0
+document-license-map:
+  CC-BY-SA-4.0 OR BSD-2-Clause: BSD-2-Clause
+  CC-BY-SA-4.0 OR MIT: MIT
+document-releases:
+- date: ${.:/component/document-date}
+  status: Draft
+  changes: |
+    This is a draft release.
+document-components:
+- action: copy-and-substitute
+  add-to-index: false
+  file:
+  - source/conf.py
+  - source/_templates/footer.html
+  - include/ref-docs.rst
+- action: copy-and-substitute
+  add-to-index: true
+  file:
+  - source/introduction.rst
+  - source/appl-ref-docs.rst
+- action: add-to-index
+  add-to-index: true
+  file: source/glossary.rst
+- action: copy-and-substitute
+  add-to-index: true
+  file:
+  - source/conventions.rst
+  - source/purpose.rst
+  - source/external-view.rst
+  - source/operations-environment.rst
+  - source/operations-basics.rst
+  - source/operations-manual.rst
+  - source/reference-manual.rst
+  - source/tutorial.rst
+- action: copy
+  add-to-index: true
+  file: source/zreferences.rst
+- action: copy-and-substitute
+  add-to-index: false
+  file: source/index.rst
+- action: glossary
+  add-to-index: false
+  file: source/glossary.rst
+  glossary-groups:
+  - /glossary/group
+- action: copy-and-substitute
+  add-to-index: false
+  file: source/refs.bib
+document-contributors:
+- action: Written by
+  contributors:
+  - first-name: Sebastian
+    last-name: Huber
+    organization: embedded brains GmbH & Co. KG
+  - first-name: Frank
+    last-name: Kühndel
+    organization: embedded brains GmbH & Co. KG
+document-type: generic
+enabled-by: true
+files: []
+hash: null
+links: []
+output-html: html
+output-pdf: specitems.pdf
+pkg-type: directory-state
+type: pkg
