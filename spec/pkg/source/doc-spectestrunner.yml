@@ -17,6 +17,7 @@ links:
   uid: ../component
 patterns:
 - common/**/*
+- spectestrunner/*.md
 - spectestrunner/*.rst
 pkg-type: workspace
 directory: ${.:/component/workspace-directory}/${.:/component/specthingsdoc-directory}

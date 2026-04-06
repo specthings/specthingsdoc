@@ -32,9 +32,15 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.bibtex',
+extensions = [
+    'sphinxcontrib.bibtex',
     'sphinx.ext.mathjax',
-    'sphinx_better_subsection']
+    'sphinx_better_subsection',
+    'myst_parser',
+]
+myst_enable_extensions = [
+    'deflist',
+]
 
 # Add bibtext bibfiles
 bibtex_bibfiles = ['refs.bib']
@@ -46,8 +52,7 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext', '.md': 'markdown'}
 
 # The master toctree document.
 master_doc = 'index'
