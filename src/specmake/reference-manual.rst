@@ -23,7 +23,47 @@ TODO
 Commands and operations
 =======================
 
-TODO
+.. _CommandSpecbuild:
+
+specbuild
+---------
+
+${.:/subprocess:args=specbuild --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecfromsource:
+
+specfromsource
+--------------
+
+${.:/subprocess:args=specfromsource --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecgcovr:
+
+specgcovr
+---------
+
+${.:/subprocess:args=specgcovr --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecmake:
+
+specmake
+--------
+
+${.:/subprocess:args=specmake --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecupdateperf:
+
+specupdateperf
+--------------
+
+${.:/subprocess:args=specupdateperf --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecupdatetimeouts:
+
+specupdatetimeouts
+------------------
+
+${.:/subprocess:args=specupdatetimeouts --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
 
 Error messages
 ==============

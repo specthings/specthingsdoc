@@ -23,7 +23,33 @@ TODO
 Commands and operations
 =======================
 
-TODO
+.. _CommandSpecwareexport:
+
+specwareexport
+--------------
+
+${.:/subprocess:args=specwareexport --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecwareexportheader:
+
+specwareexportheader
+--------------------
+
+${.:/subprocess:args=specwareexportheader --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecwareverify:
+
+specwareverify
+--------------
+
+${.:/subprocess:args=specwareverify --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecwareview:
+
+specwareview
+------------
+
+${.:/subprocess:args=specwareview --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
 
 Error messages
 ==============

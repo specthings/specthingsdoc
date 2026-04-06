@@ -23,7 +23,26 @@ TODO
 Commands and operations
 =======================
 
-TODO
+.. _CommandSpechash:
+
+spechash
+--------
+
+${.:/subprocess:args=spechash --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecpickle:
+
+specpickle
+----------
+
+${.:/subprocess:args=specpickle --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
+
+.. _CommandSpecyamlquery:
+
+specyamlquery
+-------------
+
+${.:/subprocess:args=specyamlquery --help,cwd=%(.:/component/deployment-directory),hide-cwd=1,font-size=0}
 
 Error messages
 ==============
