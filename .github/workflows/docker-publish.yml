@@ -6,6 +6,7 @@ on:
     paths:
       - .github/container/Dockerfile
       - .github/workflows/docker-publish.yml
+      - uv.lock
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
