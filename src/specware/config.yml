@@ -51,6 +51,7 @@ document-components:
   - source/operations-manual.rst
   - source/reference-manual.rst
   - source/tutorial.rst
+  - source/specdoc.rst
 - action: copy
   add-to-index: true
   file: source/zreferences.rst
