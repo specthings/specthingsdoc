@@ -3,6 +3,7 @@
 % Copyright (C) 2019 embedded brains GmbH & Co. KG
 
 \usepackage{charter}
+\usepackage{enumitem}
 \usepackage{pdflscape}
 \usepackage{setspace}
 \usepackage{tikz}
@@ -13,6 +14,19 @@
 \usepackage[atend]{bookmark}
 \bookmarksetup{open,openlevel=1,numbered,}
 \setcounter{secnumdepth}{5}
+
+% Increase maximum enumeration nesting
+\setlistdepth{9}
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=\textbullet}
+\setlist[itemize,3]{label=\textbullet}
+\setlist[itemize,4]{label=\textbullet}
+\setlist[itemize,5]{label=\textbullet}
+\setlist[itemize,6]{label=\textbullet}
+\setlist[itemize,7]{label=\textbullet}
+\setlist[itemize,8]{label=\textbullet}
+\setlist[itemize,9]{label=\textbullet}
+\renewlist{itemize}{itemize}{9}
 
 % Example ".. tabularcolumns:: |\Yl{0.1}|\Yr{0.9}|"
 \newcolumntype{\Yl}[1]{>{\raggedright\arraybackslash}\Y{#1}}
