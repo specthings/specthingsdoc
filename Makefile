@@ -4,8 +4,6 @@
 
 PACKAGE_NAME = docs
 
-PACKAGE_VERSION = $(shell uv run specyamlquery /package-version config/$(PACKAGE_NAME)/pkg/component.yml)
-
 BUILD = build
 
 ARTIFACTS_PREFIX ?= artifacts
@@ -30,7 +28,7 @@ documentation-move-artifacts: | prepare
 	mv $(BUILD)/*/*.pdf $(ARTIFACTS_PREFIX)/delivery
 
 documentation-clean: | prepare
-	if test -d $(BUILD) ; then cd $(BUILD) && git clean -xdf . && git co . ; fi
+	if test -d $(BUILD) && test -z "$(GIT_OPTIONS)" ; then cd $(BUILD) && git clean -xdf . && git co . ; fi
 
 documentation-remove: | prepare
 	rm -rf $(BUILD)
