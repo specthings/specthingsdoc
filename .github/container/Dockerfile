@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+# Copyright (C) 2026 embedded brains GmbH & Co. KG
+
 FROM alpine:3.23
 COPY pyproject.toml uv.lock .
 RUN <<EOF
